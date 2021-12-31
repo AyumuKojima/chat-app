@@ -1,6 +1,6 @@
 <div class="side_upper">
   <div class="user_name">
-    <%= link_to current_user.name, edit_user_path(current_user)%>
+    <%= link_to current_user.name, edit_user_path(current_user), method: :get %>
   </div>
   <div class="make_chat">
     <a href="#">チャットを作成する</a>
