@@ -40,13 +40,15 @@
   </div>
 </div>
 
-<div class="chat_footer">
-  <div class="input_message">
-    <input type="text" placeholder="type a message" class="message_form">
-    <label class="form-image">
-      <span class="image-file">画像</span>
-      <input type="file" class="hidden">
-    </label>
+<%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
+  <div class="chat_footer">
+    <div class="input_message">
+      <%= f.text_field :content, class: 'message_form', placeholder: 'type a message'%>
+      <label class="form-image">
+        <span class="image-file">画像</span>
+        <%= f.file_field :image, class: 'hidden' %>
+      </label>
+    </div>
+    <%= f.submit '送信', class: 'submit_btn'%>
   </div>
-  <input type="submit" value="送信" class="submit_btn">
-</div>
+<%end%>
